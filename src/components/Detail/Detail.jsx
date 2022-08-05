@@ -23,10 +23,11 @@ const Detail = () => {
               <div className="body-box">
                 <p>{todoitem.comment}</p>
               </div>
+              {modal === false ?  
               <button className="comment-btn"
                onClick={() => setModal(true)}>
-                댓글보기
-              </button>
+                댓글보기 </button> : null}
+             
               {modal === true ? <Comment setModal={setModal} /> : null}
             </>
           );
