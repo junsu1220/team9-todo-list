@@ -1,8 +1,8 @@
 import {createStore, combineReducers} from "redux";
-import Comment from "../modules/comment"
+import comment from "../modules/comments"
 
 
-const roootReducer = combineReducers({Comment});
+const roootReducer = combineReducers({comment});
 
 
 const store = createStore(roootReducer);
