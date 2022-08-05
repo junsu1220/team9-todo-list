@@ -2,21 +2,63 @@ import Header from "../components/Header";
 import Layout from "../components/Layout";
 import React from "react";
 import styled from "styled-components";
+import { addTodo } from "../redux/modules/todos";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { nanoid } from "nanoid";
 
 const Add = () => {
+  const dispatch = useDispatch();
+  const userName = React.useRef();
+  const title = React.useRef();
+  const comment = React.useRef();
+  const { todos } = useSelector((state) => state.todos);
+  console.log(todos.title);
+
+  const addTodoHandler = (e) => {
+    e.preventDefault();
+    console.log(addTodoHandler);
+    dispatch(
+      addTodo({
+        id: nanoid(),
+        userName: userName.current.value,
+        title: title.current.value,
+        comment: comment.current.value,
+      }),
+      (userName.current.value = ""),
+      (title.current.value = ""),
+      (comment.current.value = "")
+    );
+  };
+
   return (
     // <Layout>
     //   <Header />
     <FormContainer>
       <InputGroup>
         <label>작성자</label>
-        <input placeholder="" />
+        <input
+          placeholder="작성자의 이름을 입력해주세요.(5자 이내)"
+          type="text"
+          ref={userName}
+        />
         <label>제목</label>
-        <input />
+        <input
+          placeholder="제목을 입력해주세요.(50자 이내)"
+          type="text"
+          ref={title}
+        />
         <label>내용</label>
-        <input style={{ padding: "0px 0px 200px" }} />
+        <input
+          style={{ padding: "0px 0px 200px" }}
+          placeholder="내용을 입력해주세요.(200자 이내)"
+          type="text"
+          ref={comment}
+        />
       </InputGroup>
-      <button>추가하기</button>
+      <button onClick={addTodoHandler}>추가하기</button>
+      <div>
+        <h2>aaa</h2>
+      </div>
     </FormContainer>
     // </Layout>
   );
