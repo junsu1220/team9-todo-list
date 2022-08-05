@@ -17,11 +17,15 @@ const EditComment = (id) => {
   return (
     <div>
       <input 
+      className="comment-input" 
       ref={editComment_ref} 
       placeholder="수정할 내용을 입력해주세요"/>
-      <button>취소</button>
+      <button
+      className="comment-btn"
+      >취소</button>
   
-      <button onClick={onSubmit}>저장</button>
+      <button onClick={onSubmit}
+      className="comment-btn">저장</button>
     </div>
   );
 };

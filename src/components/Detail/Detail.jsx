@@ -4,6 +4,8 @@ import "./style.css"
 
 const Detail = () => {
     const [modal, setModal] = useState(false);
+
+    
     return (
         <div className="wrap-box">
             <div className="id-box">
