@@ -1,11 +1,8 @@
-import {createStore, combineReducers} from "redux";
-import Comment from "../modules/comment"
+import { createStore, combineReducers } from "redux";
+import todos from "../modules/todos";
 
+const rootReducer = combineReducers({ todos });
 
-const roootReducer = combineReducers({Comment});
-
-
-const store = createStore(roootReducer);
-
+const store = createStore(rootReducer);
 
 export default store;
