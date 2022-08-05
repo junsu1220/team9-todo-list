@@ -1,10 +1,9 @@
 import React from "react";
+import Comment from "../components/Detail/Comment";
 
 const Detail = () => {
     return (
-        <div>
-            
-        </div>
+            <Comment/>
     );
 };
 

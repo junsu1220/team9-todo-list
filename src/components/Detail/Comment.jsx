@@ -1,7 +1,8 @@
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 import {nanoid} from "nanoid";
 import { useSelector, useDispatch } from "react-redux";
 import {addComment, delComment} from "../../redux/modules/comments"
+import EditComment from "./EditComment";
 
 const Comment = () => {
     const username_ref = useRef();
@@ -22,30 +23,44 @@ const Comment = () => {
     }
 
     const onClickDelComment = (id) => {
-        dispatch(delComment({id}));
+        dispatch(delComment(id));
     }
     
+    const [modal, setModal] = useState(false);
+    
+    
     return(
-        <div>
+        <div className="wrap-box">
             <form onSubmit={onSubmit}>
-                <button>댓글 내리기</button>
-                <input 
+                <input
+                className="comment-input" 
                 ref={username_ref}
                 placeholder = "이름을 입력해주세요"/>
                 <input
+                className="comment-input" 
                 ref={comment_ref}
                 placeholder = "댓글을 입력해주세요" />
                 <button 
+                className="comment-btn"
                 onClick = {onSubmit}
                 >추가하기</button>
             </form>
             {list.map((item)=>{
                 return (
-                    <div key = {`${item.id}`}>
+                    <div className="comment-box"
+                    key = {`${item.id}`}>
                     <p>{item.username}</p>
                     <p>{item.comment}</p>
-                    <button>수정</button>
-                    <button onClick={onClickDelComment(item.id)}>삭제</button>
+                    <button
+                    className="comment-btn" 
+                    onClick={()=>{
+                          onClickDelComment(item.id);
+                          }}>삭제</button>
+                    <button
+                    className="comment-btn"
+                    onClick={()=>{setModal(!modal)}}>수정</button>
+                        {modal === true ? <EditComment id={item.id}/> : null}
+                   
                 </div>
                 )
             })}
