@@ -24,10 +24,10 @@ const Detail = () => {
                 <p>{todoitem.comment}</p>
               </div>
               <button className="comment-btn"
-               onClick={() => setModal(!modal)}>
-                댓글
+               onClick={() => setModal(true)}>
+                댓글보기
               </button>
-              {modal === true ? <Comment /> : null}
+              {modal === true ? <Comment setModal={setModal} /> : null}
             </>
           );
         })}

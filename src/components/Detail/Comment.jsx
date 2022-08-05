@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {addComment, delComment} from "../../redux/modules/comments"
 import EditComment from "./EditComment";
 
-const Comment = () => {
+const Comment = (props) => {
     const username_ref = useRef();
     const comment_ref = useRef();
     const dispatch = useDispatch();
@@ -26,11 +26,14 @@ const Comment = () => {
         dispatch(delComment(id));
     }
     
-    const [modal, setModal] = useState(false);
+    const [modal1, setModal1] = useState(false);
     
     
     return(
         <div className="wrap-box">
+            <button 
+            className="comment-btn"
+            onClick={()=>{props.setModal(false)}}>댓글 닫기</button>
             <form onSubmit={onSubmit}>
                 <input
                 className="comment-input" 
@@ -58,8 +61,8 @@ const Comment = () => {
                           }}>삭제</button>
                     <button
                     className="comment-btn"
-                    onClick={()=>{setModal(true)}}>수정</button>
-                        {modal === true ? <EditComment setModal={setModal} id={item.id}/> : null}
+                    onClick={()=>{setModal1(true)}}>수정</button>
+                        {modal1 === true ? <EditComment setModal={setModal1} id={item.id}/> : null}
                    
                 </div>
                 )
