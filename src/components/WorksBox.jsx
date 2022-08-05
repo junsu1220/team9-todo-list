@@ -1,15 +1,22 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 const WorksBox = () => {
+    const todoList = useSelector((state)=> state.todos.todos)
+
     return (
         
         <Container>
-            <TodoBox>
-                <h3>title</h3>
-                <p>작성자</p>
-                <Removebtn>삭제</Removebtn>
-            </TodoBox>
+            {todoList.map((todoitem)=>{
+                return(
+                    <TodoBox key = {`${todoitem.id}`}>
+                    <h3>{todoitem.title}</h3>
+                    <p>{todoitem.userName}</p>
+                    <Removebtn>삭제</Removebtn>
+                </TodoBox>
+                );
+            })}
         </Container>
     
     );
