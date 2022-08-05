@@ -58,8 +58,8 @@ const Comment = () => {
                           }}>삭제</button>
                     <button
                     className="comment-btn"
-                    onClick={()=>{setModal(!modal)}}>수정</button>
-                        {modal === true ? <EditComment id={item.id}/> : null}
+                    onClick={()=>{setModal(true)}}>수정</button>
+                        {modal === true ? <EditComment setModal={setModal} id={item.id}/> : null}
                    
                 </div>
                 )

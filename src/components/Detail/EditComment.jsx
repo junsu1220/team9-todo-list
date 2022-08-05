@@ -1,16 +1,18 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { editComment } from "../../redux/modules/comments";
 
-const EditComment = (id) => {
+const EditComment = (props) => {
     const dispatch = useDispatch();
     const editComment_ref = React.useRef();
 
   const onSubmit = (event) => {
     event.preventDefault();
-    const editComment = editComment_ref.current.value;
+    const comment = editComment_ref.current.value;
+    const id = props.id;
 
     editComment_ref.current.value = "";
-    dispatch(editComment({id, editComment}));
+    dispatch(editComment({id, comment}));
   }
 
 
@@ -22,6 +24,7 @@ const EditComment = (id) => {
       placeholder="수정할 내용을 입력해주세요"/>
       <button
       className="comment-btn"
+      onClick={()=>props.setModal(false)}
       >취소</button>
   
       <button onClick={onSubmit}

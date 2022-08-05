@@ -49,7 +49,7 @@ export default function comments(state = initialState, action) {
           if (item.id === action.payload.id){
             return{
               ...item,
-              comment: action.payload.editComment
+              comment: action.payload.comment
             };
            
           } return item;

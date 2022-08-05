@@ -1,5 +1,6 @@
 .wrap-box{
-    margin: 10px 20px;
+    width: 1200px;
+    margin: 0 auto 0 auto;
 }
 .id-box {
     display: flex;
