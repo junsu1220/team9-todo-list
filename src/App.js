@@ -1,9 +1,8 @@
-import Comment from "./components/Detail/Comment";
-
+import Home from "./pages/Home";
 function App() {
   return (
     <div className="App">
-      <Comment/>
+      <Home />
     </div>
   );
 }
