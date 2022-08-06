@@ -1,12 +1,12 @@
-import {createStore, combineReducers} from "redux";
-import comment from "../modules/comments";
+import {configureStore} from "@reduxjs/toolkit";
+import comments from "../modules/comments";
 import todos from "../modules/todos";
 
-
-const roootReducer = combineReducers({comment, todos});
-
-
-const store = createStore(roootReducer);
-
+const store = configureStore({
+    reducer: {
+        comments,
+        todos
+    },
+});
 
 export default store;

@@ -9,7 +9,7 @@ const Comment = (props) => {
     const comment_ref = useRef();
     const dispatch = useDispatch();
 
-    const list = useSelector((state)=> state.comment.list);
+    const list = useSelector((state)=> state.comments.list);
 
     const onSubmit = (event) => {
         event.preventDefault();
@@ -49,6 +49,7 @@ const Comment = (props) => {
                 >추가하기</button>
             </form>
             {list.map((item)=>{
+    
                 return (
                     <div className="comment-box"
                     key = {`${item.id}`}>
@@ -62,7 +63,7 @@ const Comment = (props) => {
                     <button
                     className="comment-btn"
                     onClick={()=>{setModal1(true)}}>수정</button>
-                        {modal1 === true ? <EditComment setModal={setModal1} id={item.id}/> : null}
+                        {modal1 === true ? <EditComment setModal={setModal1} id={item.id} username={item.username}/> : null}
                    
                 </div>
                 )

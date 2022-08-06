@@ -10,9 +10,10 @@ const EditComment = (props) => {
     event.preventDefault();
     const comment = editComment_ref.current.value;
     const id = props.id;
+    const username = props.username;
 
     editComment_ref.current.value = "";
-    dispatch(editComment({id, comment}));
+    dispatch(editComment({id, comment, username}));
   }
 
 
