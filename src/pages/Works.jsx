@@ -1,13 +1,11 @@
-import React from "react";
-import WorksBox from "../components/WorksBox";
+import { Link } from "react-router-dom";
 
 const Works = () => {
-    return (
-        <div>
-            <h1>내 할일</h1>
-            <WorksBox />
-        </div>
-    );
+  return (
+    <Link to={"/detail"}>
+      <div>상세보기</div>
+    </Link>
+  );
 };
 
 export default Works;

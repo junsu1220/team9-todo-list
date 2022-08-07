@@ -1,0 +1,46 @@
+.wrap-box {
+  width: 1200px;
+  margin: 0 auto 0 auto;
+}
+.id-box {
+  display: flex;
+}
+
+.home-btn {
+  background-color: white;
+  height: 30px;
+  position: relative;
+  top: 20px;
+  left: 650px;
+  border: 1px solid #ddd;
+}
+.body-box {
+  padding: 20px;
+  height: 400px;
+  text-align: center;
+}
+
+.comment-btn {
+  background-color: white;
+  height: 30px;
+  border: 1px solid #ddd;
+  margin: 5px;
+}
+
+.comment-btn:hover {
+  background-color: #ddd;
+}
+
+.comment-input {
+  margin: 10px;
+  width: 300px;
+  height: 30px;
+}
+
+.comment-box {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  width: 700px;
+  margin: 10px;
+}

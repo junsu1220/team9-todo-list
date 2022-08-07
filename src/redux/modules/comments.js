@@ -1,4 +1,4 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   list: [
@@ -12,21 +12,26 @@ export const commentSlice = createSlice({
   initialState,
   reducers: {
     addComment(state, action) {
-      state.list = [...state.list, action.payload]
+      state.list = [...state.list, action.payload];
     },
-    delComment(state,action) {
-      state.list = state.list.filter((item) => item.id !== action.payload)
+    delComment(state, action) {
+      state.list = state.list.filter((item) => item.id !== action.payload);
     },
-    editComment (state,action) {
-            state.list = state.list.map((item) => {
-              if (item.id === action.payload.id){
-                return{...item,
-                  username: action.payload.username,
-                  comment: action.payload.comment}
-                }else {return {...item}}
-                })
-                }}})
-   
+    editComment(state, action) {
+      state.list = state.list.map((item) => {
+        if (item.id === action.payload.id) {
+          return {
+            ...item,
+            username: action.payload.username,
+            comment: action.payload.comment,
+          };
+        } else {
+          return { ...item };
+        }
+      });
+    },
+  },
+});
 
-export const {addComment, delComment, editComment} = commentSlice.actions;
-export default commentSlice.reducer;
+export const commentsActions = commentSlice.actions;
+export default commentSlice;

@@ -1,26 +1,25 @@
-const ADDTODO = "todo/ADDTODO";
+import { createSlice } from "@reduxjs/toolkit";
 
-export function addTodo(todo) {
-  return { type: ADDTODO, todo };
-}
+const todos = createSlice({
+  name: "todos",
+  initialState: {
+    todos: [
+      {
+        id: 1,
+        userName: "아무개",
+        title: "밥 먹자",
+        comment: "어디에서 먹을까요?",
+      },
+    ],
+  },
 
-const initialState = {
-  todos: [
-    {
-      id: 1,
-      userName: "아무개",
-      title: "밥 먹자",
-      comment: "어디에서 먹을까요?",
+  reducers: {
+    addTodo(state, action) {
+      state.todos = [...state.todos, action.payload];
     },
-  ],
-};
+  },
+});
 
-export default function reducer(state = initialState, action) {
-  switch (action.type) {
-    case "todo/ADDTODO": {
-      return { ...state, todos: [...state.todos, action.todo] };
-    }
-    default:
-      return state;
-  }
-}
+export const todosActions = todos.actions;
+
+export default todos;

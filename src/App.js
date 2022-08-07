@@ -1,12 +1,8 @@
+import React from "react";
+import Router from "./shared/Router";
 
-import Detail from "./components/Detail/Detail";
-
-function App() {
-  return (
-    <div className="App">
-      <Detail/>
-    </div>
-  );
-}
+const App = () => {
+  return <Router />;
+};
 
 export default App;
