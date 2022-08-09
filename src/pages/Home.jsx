@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 import HomeImage from "../components/Home/HomeImage";
-
 import StartingPageContent from "../components/StartingPage/StartingPageContent";
 
 const Home = () => {

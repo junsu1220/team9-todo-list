@@ -71,10 +71,11 @@ const HomeImage = () => {
 
 const Container = styled.div`
 width: 890px;
-height: 600px;
+height: 700px;
 margin: 0px auto 0px auto;
 text-align: center;
 padding: 20px;
+font-size: 30px;
 `;
 
 const ImageBox = styled.div`
@@ -86,7 +87,7 @@ const ImageBox = styled.div`
 `;
 const StyledSlide = styled(Slider)`
   position: relative;
-  margin-top: 30px;
+  margin-top: 60px;
   margin-bottom: -40px;
   width: 100%;
 
