@@ -10,6 +10,7 @@ const Comment = (props) => {
   const dispatch = useDispatch();
 
   const list = useSelector((state) => state.comments.list);
+
   const [boo, setboo] = useState(true);
 
   const onSubmit = (event) => {
@@ -63,7 +64,8 @@ const Comment = (props) => {
           추가하기
         </button>
       </form>
-      {list.map((item) => {
+      {(list.length !== 0)?
+      list.map((item) => {
         return (
           <div className="comment-box" key={`${item.id}`}>
             <p>{item.username}</p>
@@ -93,7 +95,8 @@ const Comment = (props) => {
             ) : null}
           </div>
         );
-      })}
+      })
+      : null}
     </div>
   );
 };
