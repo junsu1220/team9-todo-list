@@ -64,6 +64,14 @@ const HomeImage = () => {
             }
           />
         </div>
+        <div>
+          <ImageBox
+            id="5"
+            url={
+              "https://post-phinf.pstatic.net/MjAxNzA3MTBfMTMg/MDAxNDk5Njk4MjI4ODg3.lh3Z-GoUS9nXLvMimyq9FAiGDpH7lzC2nB6VCSsQvEog.IVhD2WMVc7zjReVBXGsIpbjDfBQrjdei1uqk2h7S4lQg.PNG/IuaU3dvsyWwwjDgjgzD5HvLb35Pw.png?type=w1200"
+            }
+          />
+        </div>
       </StyledSlide>
     </Container>
   );

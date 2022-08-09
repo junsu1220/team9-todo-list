@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "username": "crystal",
+      "comment": "최고예요!"
+    },
+    {
+      "username": "제발",
+      "comment": "제발!!",
+      "id": "W7nv94txSJ591lgUIJbBW"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
