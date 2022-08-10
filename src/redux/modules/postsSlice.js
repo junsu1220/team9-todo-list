@@ -28,8 +28,21 @@ export const _addPosts = createAsyncThunk(
         "http://localhost:3001/posts_list",
         posts_list
       );
-      console.log(data.data);
+      console.log(data.data.id);
       return thunkAPI.fulfillWithValue(data.data);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+export const _delPosts = createAsyncThunk(
+  "posts/delPosts",
+  async (id, thunkAPI) => {
+    try {
+      const data = await axios.delete(`http://localhost:3001/posts_list/${id}`);
+
+      thunkAPI.dispatch(_getPosts(id));
+      return thunkAPI.fulfillWithValue(data.data.id);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
@@ -60,6 +73,12 @@ export const postsSlice = createSlice({
     },
     [_addPosts.fulfilled]: (state, action) => {
       state.posts_list = [...state.posts_list, action.payload];
+    },
+    [_delPosts.fulfilled]: (state, action) => {
+      console.log(action.payload);
+      state.posts_list = state.posts_list.filter(
+        (post) => post.id !== action.payload
+      );
     },
   },
 });
