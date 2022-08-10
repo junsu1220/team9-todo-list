@@ -42,6 +42,7 @@ const AuthForm = () => {
       },
     })
       .then((res) => {
+        console.log(res.ok);
         setIsLoading(false);
         dispatch(authActions.login(res.data.idToken));
         navigate("/", { replace: true });

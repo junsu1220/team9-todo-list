@@ -20,7 +20,7 @@ const Router = () => {
     dispatch(authActions.login(loggedInfo));
   };
 
-  useEffect(initializeUserInfo, []);
+  useEffect(initializeUserInfo, [dispatch]);
 
   const isLoggedIn = useSelector((state) => state.authContext.isLoggedIn);
   return (
