@@ -1,34 +1,48 @@
 import Header from "../components/Header";
 import Layout from "../components/Layout";
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { addTodo } from "../redux/modules/todos";
-import { useDispatch, useSelector } from "react-redux/es/exports";
+import { addPosts } from "../redux/modules/postsSlice";
+import { useDispatch } from "react-redux/es/exports";
 import { nanoid } from "nanoid";
+import { useNavigate } from "react-router-dom";
+import { _addPosts, _getPosts } from "../redux/modules/postsSlice";
 
 const Add = () => {
   const dispatch = useDispatch();
   const userName = React.useRef();
   const title = React.useRef();
   const comment = React.useRef();
-  const { todos } = useSelector((state) => state.todos);
-  console.log(todos.title);
+  const navigate = useNavigate();
+  const [boolen, setBoolen] = React.useState(true);
 
-  const addTodoHandler = (e) => {
+  const addPostsHandler = (e) => {
     e.preventDefault();
-    console.log(addTodoHandler);
-    dispatch(
-      addTodo({
-        id: nanoid(),
-        userName: userName.current.value,
-        title: title.current.value,
-        comment: comment.current.value,
-      }),
-      (userName.current.value = ""),
-      (title.current.value = ""),
-      (comment.current.value = "")
-    );
+    const posts_list = {
+      id: nanoid(),
+      userName: userName.current.value,
+      title: title.current.value,
+      comment: comment.current.value,
+    };
+    userName.current.value = "";
+    title.current.value = "";
+    comment.current.value = "";
+
+    // dispatch(addPosts({ posts_list }));
+    if (posts_list.userName && posts_list.title && posts_list.comment !== "") {
+      dispatch(_addPosts(posts_list));
+      setBoolen(!boolen);
+      navigate("/");
+    } else {
+      window.alert("입력해주세요!");
+    }
   };
+  // useEffect(() => {
+  //   dispatch(_addPosts());
+  // }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {});
+  // });
 
   return (
     // <Layout>
@@ -55,7 +69,7 @@ const Add = () => {
           ref={comment}
         />
       </InputGroup>
-      <button onClick={addTodoHandler}>추가하기</button>
+      <button onClick={addPostsHandler}>추가하기</button>
       <div>
         <h2>aaa</h2>
       </div>
