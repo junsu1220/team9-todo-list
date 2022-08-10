@@ -28,6 +28,7 @@ export const _addPosts = createAsyncThunk(
         "http://localhost:3001/posts_list",
         posts_list
       );
+      console.log(data.data);
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -58,8 +59,7 @@ export const postsSlice = createSlice({
       state.error = action.payload;
     },
     [_addPosts.fulfilled]: (state, action) => {
-      state.isLoading = false;
-      state.posts_list = action.payload;
+      state.posts_list = [...state.posts_list, action.payload];
     },
   },
 });

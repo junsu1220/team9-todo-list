@@ -24,9 +24,6 @@ const Add = () => {
       title: title.current.value,
       comment: comment.current.value,
     };
-    userName.current.value = "";
-    title.current.value = "";
-    comment.current.value = "";
 
     // dispatch(addPosts({ posts_list }));
     if (posts_list.userName && posts_list.title && posts_list.comment !== "") {
@@ -36,6 +33,9 @@ const Add = () => {
     } else {
       window.alert("입력해주세요!");
     }
+    userName.current.value = "";
+    title.current.value = "";
+    comment.current.value = "";
   };
   // useEffect(() => {
   //   dispatch(_addPosts());
