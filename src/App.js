@@ -1,11 +1,8 @@
-import Comment from "./components/Detail/Comment";
+import React from "react";
+import Router from "./shared/Router";
 
-function App() {
-  return (
-    <div className="App">
-      <Comment/>
-    </div>
-  );
-}
+const App = () => {
+  return <Router />;
+};
 
 export default App;
