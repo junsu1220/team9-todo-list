@@ -1,12 +1,12 @@
-import Header from "../../components/Header";
-import Layout from "../../components/Layout";
+import Header from "../components/Header";
+import Layout from "../components/Layout";
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { addPosts } from "../../redux/modules/postsSlice";
+import { addPosts } from "../redux/modules/postsSlice";
 import { useDispatch } from "react-redux/es/exports";
 import { nanoid } from "nanoid";
 import { useNavigate } from "react-router-dom";
-import { _addPosts, _getPosts } from "../../redux/modules/postsSlice";
+import { _addPosts, _getPosts } from "../redux/modules/postsSlice";
 
 const Add = () => {
   const dispatch = useDispatch();

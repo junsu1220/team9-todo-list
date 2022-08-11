@@ -1,11 +1,4 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
   "comments": [
     {
       "id": "kiAsBYceQxA3GfsCQQ7c1",
@@ -16,9 +9,39 @@
       "id": "KyEbNq2v_571QHgcq0toD",
       "username": "만화가 조아",
       "comment": "원피스는 투피스보다 좋다"
+    },
+    {
+      "id": "lZi3uOxfpc1UCA6ZtXQSq",
+      "username": "asd",
+      "comment": "asdasd"
     }
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "posts_list": [
+    {
+      "id": "6hIHk_i_zDQN8QT-gumZY",
+      "userName": "11111111",
+      "title": "11111111",
+      "comment": "111111111111111111"
+    },
+    {
+      "id": "opR7aORygDx-TZgjQE2pS",
+      "userName": "asdasd",
+      "title": "asdasdasd",
+      "comment": "asdasdasdasd"
+    },
+    {
+      "id": "eBJSpMPKUNSHjCwzYzmae",
+      "userName": "qqq",
+      "title": "qqqq",
+      "comment": "qqqqq"
+    },
+    {
+      "title": "123456",
+      "id": "WMGpMugB2zQRX_9kGU7lp"
+    }
+  ],
+  "edit": []
 }

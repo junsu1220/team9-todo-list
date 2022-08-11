@@ -10,6 +10,12 @@ const todos = createSlice({
         title: "밥 먹자",
         comment: "어디에서 먹을까요?",
       },
+      {
+        id: 2,
+        userName: "개똥이",
+        title: "만화 보자",
+        comment: "무엇을 볼까요?",
+      },
     ],
   },
 

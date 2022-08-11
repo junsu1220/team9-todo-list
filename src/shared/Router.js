@@ -8,6 +8,9 @@ import Detail from "../pages/Detail";
 import Home from "../pages/Home";
 import Work from "../pages/Work";
 import Works from "../pages/Works";
+import Add from "../pages/Add";
+import Edit from "../pages/Edit";
+
 import { authActions } from "../redux/modules/authContext";
 
 const Router = () => {
@@ -41,6 +44,9 @@ const Router = () => {
           <Route path="/work" element={<Work />} />
           <Route path="/works" element={<Works />} />
           <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/add" element={<Add />}></Route>
+          <Route path="/edit/:id" element={<Edit />}></Route>
+
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Layout>
