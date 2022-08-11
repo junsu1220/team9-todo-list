@@ -14,7 +14,6 @@ const Detail = () => {
 
   return (
     <div className="wrap-box">
-          <>
             <div className="id-box" key={`${posts.id}`}>
               <h3>id: {posts.id}</h3>
               <button className="home-btn"
@@ -33,7 +32,6 @@ const Detail = () => {
             ) : null}
 
             {modal === true ? <Comment setModal={setModal} /> : null}
-          </>
     </div>
   );
 };
