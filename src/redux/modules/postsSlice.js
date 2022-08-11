@@ -62,6 +62,17 @@ export const _findPosts = createAsyncThunk(
     }
   }
 );
+export const _editPosts = createAsyncThunk(
+  "posts/editPosts",
+  async ({ id, title, userName }, thunkAPI) => {
+    const res = await axios.put(`http://localhost:3001/posts_list/${id}`, {
+      title: title,
+      userName: userName,
+    });
+    thunkAPI.dispatch(_getPosts(id));
+    return thunkAPI.fulfillWithValue(id, title, userName);
+  }
+);
 
 export const postsSlice = createSlice({
   name: "posts",
@@ -99,6 +110,21 @@ export const postsSlice = createSlice({
       state.posts_list = state.posts_list.filter(
         (post) => post.id === action.payload["id"]
       );
+    },
+    [_editPosts.fulfilled]: (state, action) => {
+      state.posts_list.map((post) => {
+        if (post.id === action.payload.id) {
+          return {
+            ...post,
+            title: action.payload.title,
+            userName: action.payload.userName,
+          };
+        } else {
+          return {
+            post,
+          };
+        }
+      });
     },
   },
 });

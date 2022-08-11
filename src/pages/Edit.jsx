@@ -6,6 +6,7 @@ import { _findPosts } from "../redux/modules/postsSlice";
 
 const Edit = () => {
   const { id } = useParams();
+  const [rock, setRock] = React.useState(false);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -34,7 +35,8 @@ const Edit = () => {
         <br />
         content: <input />
         <br />
-        <button>수정하기</button>
+        <button onClick={() => setRock(true)}>수정하기</button>
+        {rock === false ? null : <input />}
       </form>
     </div>
   );
