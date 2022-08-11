@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
+import classes from "./ProfileForm.module.css";
+
 const ProfileForm = () => {
   const navigate = useNavigate();
   const newPasswordInputRef = useRef();
@@ -31,9 +33,9 @@ const ProfileForm = () => {
     });
   };
   return (
-    <form onSubmit={submitHandler}>
-      <div>
-        <label htmlFor="new-password">New Password</label>
+    <form className={classes.form} onSubmit={submitHandler}>
+      <div classes={classes.control}>
+        <label htmlFor="new-password">새로운 비밀번호 : </label>
         <input
           type="password"
           id="new-password"
@@ -41,8 +43,8 @@ const ProfileForm = () => {
           ref={newPasswordInputRef}
         />
       </div>
-      <div>
-        <button>Change Password</button>
+      <div className={classes.action}>
+        <button>비밀번호 변경</button>
       </div>
     </form>
   );

@@ -1,9 +1,10 @@
 import ProfileForm from "./ProfileForm";
+import classes from "./UserProfile.module.css";
 
 const UserProfile = () => {
   return (
-    <section>
-      <h1>Your User Profile</h1>
+    <section className={classes.profile}>
+      <h1>프로필 변경</h1>
       <ProfileForm />
     </section>
   );

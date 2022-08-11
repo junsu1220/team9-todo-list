@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { authActions } from "../../redux/modules/authContext";
+import classes from "./AuthForm.module.css";
 
 const AuthForm = () => {
   const dispatch = useDispatch();
@@ -53,15 +54,15 @@ const AuthForm = () => {
   };
 
   return (
-    <section>
-      <h1>{isLogin ? "Login" : "Sign Up"}</h1>
+    <section className={classes.auth}>
+      <h1>{isLogin ? "로그인" : "회원가입"}</h1>
       <form onSubmit={submitHandler}>
-        <div>
-          <label htmlFor="email">Your Email</label>
+        <div className={classes.control}>
+          <label htmlFor="email">이메일</label>
           <input type="email" id="email" required ref={emailInputRef} />
         </div>
-        <div>
-          <label htmlFor="password">Your Password</label>
+        <div className={classes.control}>
+          <label htmlFor="password">비밀번호</label>
           <input
             type="password"
             id="password"
@@ -69,13 +70,11 @@ const AuthForm = () => {
             ref={passwordInputRef}
           />
         </div>
-        <div>
-          {!isLoading && (
-            <button>{isLogin ? "Login" : "Create Account"}</button>
-          )}
+        <div className={classes.actions}>
+          {!isLoading && <button>{isLogin ? "로그인" : "회원가입"}</button>}
           {isLoading && <p>sending request...</p>}
           <button type="button" onClick={switchAuthModeHandler}>
-            {isLogin ? "Create new account" : "Login with  existing account"}
+            {isLogin ? "회원가입" : "기존의 이메일로 로그인하기"}
           </button>
         </div>
       </form>
