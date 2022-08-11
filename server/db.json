@@ -1,39 +1,47 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
   "comments": [
     {
+      "id": "kiAsBYceQxA3GfsCQQ7c1",
+      "username": "만화장인",
+      "comment": "슬램덩크가 최고입니다."
+    },
+    {
+      "id": "KyEbNq2v_571QHgcq0toD",
+      "username": "만화가 조아",
+      "comment": "원피스는 투피스보다 좋다"
+    },
+    {
+      "id": "lZi3uOxfpc1UCA6ZtXQSq",
       "username": "asd",
-      "comment": "zxczxczxc",
-      "id": "QPMVTrH4no7vprOELntqu"
-    },
-    {
-      "id": "L0Hp19qIRKebQShrxtHwX",
-      "username": "asdasd",
-      "comment": "zxczxczxc"
-    },
-    {
-      "username": "qweqwe",
-      "comment": "sdzxcqwe",
-      "id": "3E0N0-jX3vI0opQYmrmQn"
-    },
-    {
-      "id": "njTnazXMSioBX_p5u0d66",
-      "username": "asdasd",
-      "comment": "zxczxczxc"
-    },
-    {
-      "id": "5etnq7-0uvuwdAt9VdrmJ",
-      "username": "asd",
-      "comment": "asdasdasd"
+      "comment": "asdasd"
     }
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "posts_list": [
+    {
+      "id": "6hIHk_i_zDQN8QT-gumZY",
+      "userName": "11111111",
+      "title": "11111111",
+      "comment": "111111111111111111"
+    },
+    {
+      "id": "opR7aORygDx-TZgjQE2pS",
+      "userName": "asdasd",
+      "title": "asdasdasd",
+      "comment": "asdasdasdasd"
+    },
+    {
+      "id": "eBJSpMPKUNSHjCwzYzmae",
+      "userName": "qqq",
+      "title": "qqqq",
+      "comment": "qqqqq"
+    },
+    {
+      "title": "123456",
+      "id": "WMGpMugB2zQRX_9kGU7lp"
+    }
+  ],
+  "edit": []
 }
