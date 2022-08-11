@@ -10,7 +10,7 @@ const HomeImage = () => {
     speed: 400,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
@@ -78,7 +78,7 @@ const HomeImage = () => {
 
 const Container = styled.div`
   width: 890px;
-  height: 700px;
+  height: 550px;
   margin: 0px auto 0px auto;
   text-align: center;
   padding: 20px;

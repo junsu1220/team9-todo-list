@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": "kiAsBYceQxA3GfsCQQ7c1",
+      "username": "만화장인",
+      "comment": "슬램덩크가 최고입니다."
+    },
+    {
+      "id": "KyEbNq2v_571QHgcq0toD",
+      "username": "만화가 조아",
+      "comment": "원피스는 투피스보다 좋다"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

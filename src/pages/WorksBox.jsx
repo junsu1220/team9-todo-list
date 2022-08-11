@@ -26,19 +26,26 @@ const Container = styled.div`
 `;
 const TodoBox = styled.div`
   width: 800px;
-  height: 100px;
-  border: 1px solid #ddd;
+  height: 150px;
+  border: 1px solid #38015c;
   border-radius: 10px;
   margin: 20px;
   padding: 10px;
+  
+  &:hover{
+    background-color: #9f5ccc;
+    color: white;
+  }
 `;
 
 const Removebtn = styled.button`
   background: white;
   position: relative;
   top: -60px;
-  left: 750px;
-  border: 1px solid #ddd;
+  left: 700px;
+  border: 1px solid white;
+  background-color: #38015c;
+  color: white;
   border-radius: 10px;
   padding: 10px;
 `;

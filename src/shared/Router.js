@@ -40,7 +40,7 @@ const Router = () => {
           />
           <Route path="/work" element={<Work />} />
           <Route path="/works" element={<Works />} />
-          <Route path="/detail" element={<Detail />} />
+          <Route path="/detail/:id" element={<Detail />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Layout>

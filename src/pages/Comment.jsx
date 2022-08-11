@@ -75,8 +75,9 @@ const Comment = (props) => {
         ? list.map((item) => {
             return (
               <div className="comment-box" key={`${item.id}`}>
-                <p>{item.username}</p>
+                <p className="user-name">{item.username}</p>
                 <p>{item.comment}</p>
+                <div className="btn-box">
                 <button
                   className="comment-btn"
                   onClick={() => {
@@ -92,7 +93,7 @@ const Comment = (props) => {
                   }}
                 >
                   수정
-                </button>
+                </button></div>
                 {modal1 === true ? (
                   <EditComment
                     setModal={setModal1}

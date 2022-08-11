@@ -29,7 +29,7 @@ const EditComment = (props) => {
   }, [foo]);
 
   return (
-    <div>
+    <div className="edit-box">
       <input
         className="comment-input"
         ref={editComment_ref}
