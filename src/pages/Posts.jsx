@@ -3,13 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { _delPosts, _getPosts } from "../redux/modules/postsSlice";
-import { useParams } from "react-router-dom";
-import axios from "axios";
 
 const Posts = () => {
-  const params = useParams();
-  const { text } = params;
-  console.log(text);
   //   const [boolen, setBoolen] = React.useState(true); // useState값을 지정 후 useEffect에 false값을 넣어줌
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -51,7 +46,7 @@ const Posts = () => {
               <p>{post.title}</p>
               <button
                 onClick={() => {
-                  navigate("/edit/:id");
+                  navigate(`/edit/${post.id}`);
                 }}
               >
                 수정하기

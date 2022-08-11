@@ -12,10 +12,10 @@ export const _getPosts = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       const data = await axios.get("http://localhost:3001/posts_list");
-      console.log(data);
+      console.log(data.data);
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
-      console.log(error);
+      //   console.log(error);
       return thunkAPI.rejectWithValue(error);
     }
   }
@@ -28,7 +28,7 @@ export const _addPosts = createAsyncThunk(
         "http://localhost:3001/posts_list",
         posts_list
       );
-      console.log(data.data.id);
+      //   console.log(data.data.id);
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -39,11 +39,25 @@ export const _delPosts = createAsyncThunk(
   "posts/delPosts",
   async (id, thunkAPI) => {
     try {
-      const data = await axios.delete(`http://localhost:3001/posts_list/${id}`);
+      await axios.delete(`http://localhost:3001/posts_list/${id}`);
+      console.log(id);
 
-      thunkAPI.dispatch(_getPosts(id));
-      return thunkAPI.fulfillWithValue(data.data.id);
+      //   thunkAPI.dispatch(_getPosts(id));
+      return thunkAPI.fulfillWithValue(id);
     } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+export const _findPosts = createAsyncThunk(
+  "posts/findPosts",
+  async (id, thunkAPI) => {
+    try {
+      const data = await axios.get(`http://localhost:3001/posts_list/${id}`);
+      console.log(data.data);
+      return thunkAPI.fulfillWithValue(data.data);
+    } catch (error) {
+      //   console.log(error);
       return thunkAPI.rejectWithValue(error);
     }
   }
@@ -78,6 +92,12 @@ export const postsSlice = createSlice({
       console.log(action.payload);
       state.posts_list = state.posts_list.filter(
         (post) => post.id !== action.payload
+      );
+    },
+    [_findPosts.fulfilled]: (state, action) => {
+      console.log(action.payload["id"]);
+      state.posts_list = state.posts_list.filter(
+        (post) => post.id === action.payload["id"]
       );
     },
   },
