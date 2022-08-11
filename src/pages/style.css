@@ -1,0 +1,71 @@
+.wrap-box {
+  width: 1200px;
+  margin: 0 auto 0 auto;
+}
+.id-box {
+  display: flex;
+}
+
+.home-btn {
+  background-color: #38015c;
+  color: white;
+  height: 30px;
+  position: relative;
+  top: 20px;
+  left: 650px;
+  border: 1px solid #ddd;
+}
+.home-btn:hover {
+  background-color: #9f5ccc;
+}
+
+.body-box {
+  padding: 20px;
+  height: 400px;
+  text-align: center;
+}
+.btn-box{
+  position: relative;
+  top: -50px;
+  left: 500px;
+}
+.comment-btn {
+  background-color: #38015c;
+  color: white;
+  height: 30px;
+  border: 1px solid #38015c;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.comment-btn:hover {
+  background-color: #9f5ccc;
+  top: 20px;
+  left: 300px;
+}
+
+.comment-input {
+  margin: 10px;
+  width: 300px;
+  height: 30px;
+}
+
+.comment-box {
+  border: 1px solid  #38015c;
+  border-radius: 10px;
+  padding: 5px;
+  padding-left: 15px;
+  width: 700px;
+  height: 100px;
+  margin: 10px;
+}
+
+.user-name{
+  font-size: 10px;
+}
+
+.edit-box{
+  position: relative;
+  top: -90px;
+  left: -10px;
+}

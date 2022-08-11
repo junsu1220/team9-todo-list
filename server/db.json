@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "username": "asd",
+      "comment": "zxczxczxc",
+      "id": "QPMVTrH4no7vprOELntqu"
+    },
+    {
+      "id": "L0Hp19qIRKebQShrxtHwX",
+      "username": "asdasd",
+      "comment": "zxczxczxc"
+    },
+    {
+      "username": "qweqwe",
+      "comment": "sdzxcqwe",
+      "id": "3E0N0-jX3vI0opQYmrmQn"
+    },
+    {
+      "id": "njTnazXMSioBX_p5u0d66",
+      "username": "asdasd",
+      "comment": "zxczxczxc"
+    },
+    {
+      "id": "5etnq7-0uvuwdAt9VdrmJ",
+      "username": "asd",
+      "comment": "asdasdasd"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
