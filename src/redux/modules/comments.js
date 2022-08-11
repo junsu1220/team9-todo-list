@@ -10,7 +10,9 @@ export const __todosThunk = createAsyncThunk(
   "getTodos",
   async (payload, thunkAPI) => {
     try {
-      const data = await axios.get("http://localhost:3001/comments");
+      const data = await axios.get(
+        "https://protected-shelf-37411.herokuapp.com/comments"
+      );
       return thunkAPI.fulfillWithValue(data.data);
     } catch (e) {
       return thunkAPI.rejectWithValue(e);
@@ -19,22 +21,32 @@ export const __todosThunk = createAsyncThunk(
 );
 
 export const addComment = createAsyncThunk("addTodos", async (payload) => {
-  const data = await axios.post("http://localhost:3001/comments", payload);
-  return axios.get("http://localhost:3001/comments"), data.data;
+  const data = await axios.post(
+    "https://protected-shelf-37411.herokuapp.com/comments",
+    payload
+  );
+  return (
+    axios.get("https://protected-shelf-37411.herokuapp.com/comments"), data.data
+  );
 });
 
 export const delComment = createAsyncThunk("delTodos", async (id) => {
-  const data = await axios.delete(`http://localhost:3001/comments/${id}`);
+  const data = await axios.delete(
+    `https://protected-shelf-37411.herokuapp.com/comments/${id}`
+  );
   return id;
 });
 
 export const editComment = createAsyncThunk(
   "updateTodos",
   async ({ id, username, comment }) => {
-    const data = await axios.put(`http://localhost:3001/comments/${id}`, {
-      username,
-      comment,
-    });
+    const data = await axios.put(
+      `https://protected-shelf-37411.herokuapp.com/comments/${id}`,
+      {
+        username,
+        comment,
+      }
+    );
     return { id, username, comment };
   }
 );

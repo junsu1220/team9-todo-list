@@ -15,7 +15,7 @@ const Posts = () => {
   const { posts_list, isLoading, error } = useSelector((state) => state.posts);
   console.log(posts_list);
   const onRemoveHandler = (id) => {
-    // axios.delete(`http://localhost:3001/posts_list/${postId}`);
+    // axios.delete(`https://protected-shelf-37411.herokuapp.com/posts_list/${postId}`);
     dispatch(_delPosts(id));
   };
   console.log(onRemoveHandler);

@@ -11,7 +11,9 @@ export const _getPosts = createAsyncThunk(
   "posts/getPosts",
   async (payload, thunkAPI) => {
     try {
-      const data = await axios.get("http://localhost:3001/posts_list");
+      const data = await axios.get(
+        "https://protected-shelf-37411.herokuapp.com/posts_list"
+      );
       console.log(data.data);
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
@@ -25,7 +27,7 @@ export const _addPosts = createAsyncThunk(
   async (posts_list, thunkAPI) => {
     try {
       const data = await axios.post(
-        "http://localhost:3001/posts_list",
+        "https://protected-shelf-37411.herokuapp.com/posts_list",
         posts_list
       );
       //   console.log(data.data.id);
@@ -39,7 +41,9 @@ export const _delPosts = createAsyncThunk(
   "posts/delPosts",
   async (id, thunkAPI) => {
     try {
-      await axios.delete(`http://localhost:3001/posts_list/${id}`);
+      await axios.delete(
+        `https://protected-shelf-37411.herokuapp.com/posts_list/${id}`
+      );
       console.log(id);
 
       //   thunkAPI.dispatch(_getPosts(id));
@@ -53,7 +57,9 @@ export const _findPosts = createAsyncThunk(
   "posts/findPosts",
   async (id, thunkAPI) => {
     try {
-      const data = await axios.get(`http://localhost:3001/posts_list/${id}`);
+      const data = await axios.get(
+        `https://protected-shelf-37411.herokuapp.com/posts_list/${id}`
+      );
       console.log(data.data);
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
@@ -65,10 +71,13 @@ export const _findPosts = createAsyncThunk(
 export const _editPosts = createAsyncThunk(
   "posts/editPosts",
   async ({ id, title, userName }, thunkAPI) => {
-    const res = await axios.put(`http://localhost:3001/posts_list/${id}`, {
-      title: title,
-      userName: userName,
-    });
+    const res = await axios.put(
+      `https://protected-shelf-37411.herokuapp.com/posts_list/${id}`,
+      {
+        title: title,
+        userName: userName,
+      }
+    );
     thunkAPI.dispatch(_getPosts(id));
     return thunkAPI.fulfillWithValue(id, title, userName);
   }
