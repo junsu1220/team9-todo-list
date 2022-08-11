@@ -1,15 +1,17 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const WorksBox = () => {
   const todoList = useSelector((state) => state.todos.todos);
-
+  const navigate = useNavigate();
   return (
     <Container>
       {todoList.map((todoitem) => {
         return (
-          <TodoBox key={`${todoitem.id}`}>
+          <TodoBox key={`${todoitem.id}`}
+          onClick={()=>{navigate(`/detail/${todoitem.id}`)}}>
             <h3>{todoitem.title}</h3>
             <p>{todoitem.userName}</p>
             <Removebtn>삭제</Removebtn>
@@ -21,7 +23,6 @@ const WorksBox = () => {
 };
 
 const Container = styled.div`
-  display: flex;
   padding: 20px;
 `;
 const TodoBox = styled.div`
